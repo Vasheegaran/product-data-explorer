@@ -6,7 +6,8 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+# IMPORTANT: install devDependencies also
+RUN npm install --include=dev
 
 COPY . .
 
