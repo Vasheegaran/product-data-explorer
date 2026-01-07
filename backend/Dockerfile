@@ -1,8 +1,11 @@
 FROM apify/actor-node-playwright-chrome:latest
 
+USER root
+
 WORKDIR /app
 
 COPY package*.json ./
+
 RUN npm install
 
 COPY . .
